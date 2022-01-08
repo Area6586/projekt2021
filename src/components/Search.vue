@@ -1,6 +1,5 @@
 <template>
   <div class="search">
-    {{ search }}
     <input type="text" v-model="search" placeholder="Name" />
     <ul>
     <li v-for="user in filteredQuery" :key="user.char_id">
@@ -18,6 +17,7 @@
 export default {
 
   name: "Search",
+
   data(){
     return {
         search: "",
@@ -31,7 +31,7 @@ export default {
     .then(data => console.log(data))
   },
 */
-computed: {
+ computed: {
     filteredQuery() {
         const query = this.search.toLowerCase();
         if(this.search  === ""){
@@ -47,7 +47,7 @@ computed: {
       },
     },
 
-  mounted()  {
+  mounted(){
       try{
         fetch('https://www.breakingbadapi.com/api/characters/')
             .then((res)=> res.json())
