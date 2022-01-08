@@ -46,6 +46,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Home',
   components: {
@@ -63,9 +64,30 @@ export default {
     loadapi() {
       console.log("button clicked");
 
-    }
+    },
+    
+
   }
 }
-
 </script>
 
+
+<template>
+  <div class="app">
+    <Main />
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+import Main from '@/components/Main.vue'
+
+
+
+export default {
+  name: 'About',
+  components: {
+    Main
+  }
+}
+</script>

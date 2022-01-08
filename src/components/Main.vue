@@ -1,0 +1,78 @@
+<template>
+<div class="hello">
+  <button @click="info()"> showJoke </button>
+    <div v-for="data in list"  v-bind:key="data.char_id">
+      <div>
+        <img :src="data.img" style="width=10%" v-bind:img="name">
+        <h1>{{data.name}}</h1>
+      <div>
+        <h2>{{data.name + ' ' + data.nickname}}</h2>
+        <h5>{{data.birthday}}</h5>
+      </div>
+     </div>
+    </div>
+</div>
+</template>
+
+<script>
+
+import axios from 'axios';
+
+export default {
+
+  name: "HelloWorld",
+  data(){
+    return {
+      character: [],
+      id: '0',
+      name: "",
+      img: [],
+      nickname : "",
+      list: []
+    }
+  },
+/*
+  mounted(){
+    fetch('https://www.breakingbadapi.com/api/characters/')
+    .then(res=> res.json())
+    .then(data => console.log(data))
+  },
+*/
+  methods: {
+    async info(){
+      let config ={ 
+        headers : {
+          'Accept': 'application/json'
+        }
+      }
+      try{
+        const character  = await axios.get('https://www.breakingbadapi.com/api/characters/' , config);
+        console.log((character.data));
+        this.list = character.data;
+      
+      }
+      catch(err){
+        console.log(err)
+      }
+    },
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>
