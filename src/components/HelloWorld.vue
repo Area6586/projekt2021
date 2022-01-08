@@ -1,46 +1,62 @@
 <template>
-  <div class="greeting">
-    <p class="greeting">{{ greeting.toLocaleUpperCase() }}</p>
-    <span>
-      <input type="text" v-model="greeting" />
-    </span>
-  </div>
-  <div class="add-item-list">
-    <input v-model="newItem" type= "text" placeholder="add new item"/>
-      <button class="btn" v-on:click="saveItem">save</button>
-  </div>
-  <div>
-    <ol>
-      <li v-for="item in items" :key="item.message"> {{item.message}}
-      </li>
-    </ol>
-  </div>
+<div class="hello">
+  <button @click="info()"> showJoke </button>
+    <div v-for="data in list"  v-bind:key="data.char_id">
+      <div>
+        <img :src="data.img" style="width=10%" v-bind:img="name">
+        <h1>{{data.name}}</h1>
+      <div>
+        <h2>{{data.name + ' ' + data.nickname}}</h2>
+        <h5>{{data.birthday}}</h5>
+      </div>
+     </div>
+    </div>
+</div>
 </template>
 
 <script>
+
+import axios from 'axios';
+
 export default {
+
   name: "HelloWorld",
-  props: {
-    msg: String,
-  },
-  data() {
+  data(){
     return {
-      greeting: "HeiL",
-      newItem: '',
-      items: 
-      [
-        {  message: "140 Paggrty Hats"},
-        {  message: "32 board game"},
-      ],
+      character: [],
+      id: '0',
+      name: "",
+      img: [],
+      nickname : "",
+      list: []
+    }
+  },
+/*
+  mounted(){
+    fetch('https://www.breakingbadapi.com/api/characters/')
+    .then(res=> res.json())
+    .then(data => console.log(data))
+  },
+*/
+  methods: {
+    async info(){
+      let config ={ 
+        headers : {
+          'Accept': 'application/json'
+        }
+      }
+      try{
+        const character  = await axios.get('https://www.breakingbadapi.com/api/characters/' , config);
+        console.log((character.data));
+        this.list = character.data;
+      
+      }
+      catch(err){
+        console.log(err)
       }
     },
-  methods: {
-    saveItem: function(){
-      this.items.push(this.newItem);
-      this.newItem = '';
   }
-  },
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
