@@ -1,26 +1,26 @@
 <template>
   <div class="search">
-    <button @click="info()" >search </button>
-        <h1>This is an about page</h1>
-        {{list.name}}
-        <input type="text" v-model="searchQuery" placeholder="Name">
-        <div v-for="r in resultQuery" :key="r.name">{{r.name}}</div>
+    <input type="text" v-model="search" placeholder="Name" />
+    <ul>
+    <li v-for="user in filteredQuery" :key="user.char_id">
+      {{ user.name }}
+    </li>
+    </ul>
   </div>
 </template>
-
 
 <script>
 
 
-import axios from 'axios';
+//import axios from 'axios';
 
 export default {
 
   name: "Search",
+
   data(){
     return {
-        searchQuery: "",
-        name: "",
+        search: "",
         list: []
     };
   },
@@ -31,33 +31,40 @@ export default {
     .then(data => console.log(data))
   },
 */
-computed: {
-    resultQuery() {
-        return this.list.filter(() => {
+ computed: {
+    filteredQuery() {
+        const query = this.search.toLowerCase();
+        if(this.search  === ""){
+            return this.list;
+        }
+        console.log(query)
+        return this.list.filter((item) => {
             //return console.log(this.list);
-            return this.list.name.match(this.searchQuery)
-        })
-      }
+            return Object.values(item).some((word)=> 
+            String(word).toLowerCase().includes(query)
+        );
+        });
+      },
     },
 
-  methods: {
-    async info(){
-      let config ={ 
-        headers : {
-          'Accept': 'application/json'
-        }
-      }
+  mounted(){
       try{
+        fetch('https://www.breakingbadapi.com/api/characters/')
+            .then((res)=> res.json())
+            .then((json)=> {
+                console.log(json);
+                this.list = json;
+            });
+        /*
         const character  = await axios.get('https://www.breakingbadapi.com/api/characters/' , config);
-        //console.log((character.data));
+        //console.log(typeof(character.data));
         this.list = character.data;
-      
-      }
+        //console.log(typeof(this.list));
+      */}
       catch(err){
         console.log(err)
       }
     },
-  }
-}
 
+}
 </script>

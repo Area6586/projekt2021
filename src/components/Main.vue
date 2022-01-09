@@ -1,6 +1,6 @@
 <template>
 <div class="hello">
-  <button @click="info()"> showJoke </button>
+  <button @click="info()"> showCharacter </button>
     <div v-for="data in list"  v-bind:key="data.char_id">
       <div>
         <img :src="data.img" v-bind:img="name">
