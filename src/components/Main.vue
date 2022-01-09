@@ -3,7 +3,7 @@
   <button @click="info()"> showJoke </button>
     <div v-for="data in list"  v-bind:key="data.char_id">
       <div>
-        <img :src="data.img" style="width=10%" v-bind:img="name">
+        <img :src="data.img" v-bind:img="name">
         <h1>{{data.name}}</h1>
       <div>
         <h2>{{data.name + ' ' + data.nickname}}</h2>
