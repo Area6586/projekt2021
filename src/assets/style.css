@@ -71,10 +71,10 @@
 .characterList{
   color: rgb(37, 37, 37);
   font-family: roboto;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   width: 280px;
-  height: 700px;
+  height: 530px;
   display: inline-block;
   vertical-align: top;
   text-align: left;

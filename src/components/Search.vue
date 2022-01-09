@@ -8,10 +8,10 @@
     <ul>
     <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id">
       <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture">
-      <h1>Name: <br>{{user.name}}</h1>
+      <h1>{{user.name}}</h1>
         <h2>Nickname: <br>{{user.nickname}}</h2>
-        <h4>Date of birth: {{user.birthday}}</h4>
-        <h4>End of series: {{user.status}}</h4>
+        <!-- <h4>Date of birth: {{user.birthday}}</h4>
+        <h4>End of series: {{user.status}}</h4> -->
         
     </ol>
     </ul>
