@@ -1,15 +1,19 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-.image {
-  height: 2000px;
-  width: 100%;
-  align-self: center;
+.background {
+  background-image: url("https://www.teahub.io/photos/full/72-721277_breaking-bad-4k-hd-desktop-wallpaper-for..jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   background-attachment: fixed;
-}
+  margin: -8px;
+  margin-bottom: -16px;
+  border-top: 350px solid rgba(255, 255, 255, 0);
+ 
+  
+  }
 
 .Logo {
   color: white;
@@ -24,11 +28,12 @@
   font-size: 60px;
 }
 
-.input{
+.searchField{
     position: absolute;
     top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
+    overflow: hidden;
 }
 
 .inputField {
@@ -58,54 +63,35 @@
     background-color: #032202;
 }
 
-.randomCharacters {
-  height: 107%;
-  width: 80%;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.searchimg {
+  height: 400px;
+  width: 280px;
 }
 
-.container {
-  display: grid; 
+.characterList{
+  color: rgb(37, 37, 37);
+  font-family: roboto;
+  font-size: 15px;
+  font-weight: bold;
+  width: 280px;
+  height: 700px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  min-height: 250px;
+  margin: 30px;
+  padding: 30px;
+  top: 200px;
+  transform: translate(35%, 0);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 35px;
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr; 
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-template-areas: 
-    "character1 character2 character3 character4"
-    "character5 character6 character7 character8"
-    
+  overflow: hidden;
+  
+ 
+  
 }
-.character1 { 
-    grid-area: character1; 
-    margin: 12%;
-} 
-.character2 {
-    grid-area: character2;
-    margin: 12%;
-}
-.character3 { grid-area: character3; 
-margin: 12%;
-}
-.character4 { grid-area: character4; 
-margin: 12%;
-}
-.character5 { grid-area: character5; 
-margin: 12%;
-}
-.character6 { grid-area: character6; 
-margin: 12%;
-}
-.character7 { grid-area: character7; 
-margin: 12%;
-}
-.character8 { grid-area: character8; 
-margin: 12%;
-}
+
+
 
 #nav {
   padding: 30px;
@@ -119,3 +105,4 @@ margin: 12%;
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+

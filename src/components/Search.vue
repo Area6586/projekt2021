@@ -1,12 +1,34 @@
 <template>
-  <div class="search">
-    <input type="text" v-model="search" placeholder="Name" />
+
+  <div class="searchField">
+    <input class="inputField" type="text" v-model="search" placeholder=" Find Character" />
+    <!-- <button class="inputButton" @click="loadapi()">Find Character</button> -->
+    </div>
+   <div class="background">
     <ul>
-    <li v-for="user in filteredQuery" :key="user.char_id">
-      {{ user.name }}
-    </li>
+    <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id">
+      <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture">
+      <h1>Name: <br>{{user.name}}</h1>
+        <h2>Nickname: <br>{{user.nickname}}</h2>
+        <h4>Date of birth: {{user.birthday}}</h4>
+        <h4>End of series: {{user.status}}</h4>
+        
+    </ol>
     </ul>
-  </div>
+    </div>
+   
+ 
+  
+  <!-- <section class="randomCharacters">
+        <div class="container">
+          <div class="character1">
+           <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg" alt="DogPicture" width="280px" height="400px">
+          </div>
+          <div class="character2">
+           <img src="https://i.redd.it/hcprm17ktpu21.jpg" alt="DogPicture" width="280px" height="400px">
+          </div>
+          </div>
+          </section> -->
 </template>
 
 <script>

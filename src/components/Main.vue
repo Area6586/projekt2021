@@ -1,6 +1,7 @@
 <template>
 <div class="hello">
-  <button @click="info()"> showCharacter </button>
+      <div class="Logo">Breaking Bad Wiki</div>
+  <!-- <button @click="info()"> showCharacter </button>
     <div v-for="data in list"  v-bind:key="data.char_id">
       <div>
         <img :src="data.img" v-bind:img="name">
@@ -10,8 +11,11 @@
         <h5>{{data.birthday}}</h5>
       </div>
      </div>
-    </div>
+    </div> -->
+ 
 </div>
+
+
 </template>
 
 <script>
@@ -31,6 +35,9 @@ export default {
       list: []
     }
   },
+
+
+  
 /*
   mounted(){
     fetch('https://www.breakingbadapi.com/api/characters/')
@@ -38,6 +45,8 @@ export default {
     .then(data => console.log(data))
   },
 */
+
+
   methods: {
     async info(){
       let config ={ 
