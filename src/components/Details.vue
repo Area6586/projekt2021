@@ -10,84 +10,70 @@
     </div>
 
 
-    <div class="characterDetail">
+    <div class="characterDetail"  v-for="character in characters" :key="character.name">
        <div class="characterInfo">
 
-         This is a lot of Info
+                <!-- Character Name: <br> -->
+                 {{character.name}} <br>
+                 {{character.nickname}} <br> <br>
+
+                 {{character.occupation}} <br> <br>
+
+                 Birthday: <br>
+                 {{character.birthday}} <br> <br>
+
+                 Portrayed by: <br>
+                {{character.portrayed}} <br> <br>
+
+                appeared in: <br>
+                {{character.appearance}} <br> <br>               
+
+                 
+                {{character.status}}
+            
+          
        </div>
        <div class="characterPicture">
-          <img src="../assets/cast_bb_700x1000_mike-ehrmantraut-lg.jpg" alt="Girl in a jacket" style="width:350px;height:500px;"> 
+          <img :src="character.img" v-bind:img="name" alt="Girl in a jacket" style="width:350px;height:500px;"> 
        </div>
 
 
 </div>
-
-
-
-  
-
 </div>
    
+  
 </template>
 
 
 
+
 <script>
-
-
-//import axios from 'axios';
-
 export default {
-
-  name: "Search",
-
-  data(){
-    return {
-        search: "",
-        list: []
-    };
-  },
-/*
-  mounted(){
-    fetch('https://www.breakingbadapi.com/api/characters/')
-    .then(res=> res.json())
-    .then(data => console.log(data))
-  },
-*/
- computed: {
-    filteredQuery() {
-        const query = this.search.toLowerCase();
-        if(this.search  === ""){
-            return this.list;
+    name: "Details",
+    data (){
+        return {
+            characters : [],
+            birthday : "",
+            category : "",
+            img : []
         }
-        console.log(query)
-        return this.list.filter((item) => {
-            //return console.log(this.list);
-            return Object.values(item).some((word)=> 
-            String(word).toLowerCase().includes(query)
-        );
-        });
-      },
     },
-
-  mounted(){
+    mounted(){
       try{
-        fetch('https://www.breakingbadapi.com/api/characters/')
+        fetch('https://www.breakingbadapi.com/api/characters/1')
             .then((res)=> res.json())
             .then((json)=> {
                 console.log(json);
-                this.list = json;
+                this.characters = json;
             });
-        /*
-        const character  = await axios.get('https://www.breakingbadapi.com/api/characters/' , config);
-        //console.log(typeof(character.data));
-        this.list = character.data;
-        //console.log(typeof(this.list));
-      */}
-      catch(err){
+        }
+        catch(err){
         console.log(err)
       }
     },
-
 }
 </script>
+
+<style>
+
+</style>
