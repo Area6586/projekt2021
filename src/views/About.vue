@@ -1,20 +1,27 @@
 
 <template>
+
   <div class="app">
-    <Search />
+    <Details />
+    <Footer />
+  
   </div>
 </template>
 
+
 <script>
 // @ is an alias to /src
-import Search from '@/components/Search.vue'
+import Details from '@/components/Details.vue'
+import Footer from '@/components/Footer.vue'
 
 
 
 export default {
   name: 'About',
   components: {
-    Search
+    Details,
+    Footer
   }
 }
 </script>
+

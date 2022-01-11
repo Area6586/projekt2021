@@ -1,8 +1,11 @@
 <template>
+
   <div class="app">
     <Main />
     <Search />
   </div>
+
+
 </template>
 
 <script>
@@ -12,7 +15,7 @@ import Search from '@/components/Search.vue'
 
 
 export default {
-  name: 'About',
+  name: 'Home',
   components: {
     Main,
     Search
