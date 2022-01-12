@@ -9,8 +9,8 @@
       <button class="inputButton"> Search</button>
     </div>
 
-
-    <div class="characterDetail"  v-for="character in characters" :key="character.char_id">
+    <Main :char_id="character.char_id" />
+    <div class="characterDetail"  v-for="character in list" :char_id="character.char_id" :key="character.char_id">
        <div class="characterInfo">
 
                 <!-- Character Name: <br> -->
@@ -48,10 +48,13 @@
 
 
 <script>
+
+
+
 export default {
     name: "Details",
+    props: ['char_id'],
     
-
     
     data (){
         return {
@@ -59,14 +62,14 @@ export default {
             birthday : "",
             category : "",
             img : [],
-            char_id: "",
+            //char_id: this.$route.params.char_id,
             user: null,
         }
     },
 
     mounted(){
       try{
-        fetch('https://www.breakingbadapi.com/api/characters/')
+        fetch('https://www.breakingbadapi.com/api/characters/'+ this.char_id)
             .then((res)=> res.json())
             .then((json)=> {
                 console.log(json);

@@ -5,8 +5,9 @@
     <!-- <button class="inputButton" @click="loadapi()">Find Character</button> -->
     </div>
     <ul class="List">
-    <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id">
-      <router-link :to="'/about/' + user.char_id">
+
+    <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id ">
+      <router-link :to="{ name: 'Details', params: {userId: user.char_id } }">
       <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture">
       </router-link>
       <h1>{{user.name}}</h1>
@@ -37,14 +38,17 @@
 
 //import axios from 'axios';
 
+
 export default {
 
   name: "Search",
 
+
   data(){
     return {
         search: "",
-        list: []
+        list: [],
+
     };
   },
 /*
