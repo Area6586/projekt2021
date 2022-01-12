@@ -10,7 +10,7 @@
     </div>
 
 
-    <div class="characterDetail"  v-for="character in characters" :key="character.name">
+    <div class="characterDetail"  v-for="character in characters" :key="character.char_id">
        <div class="characterInfo">
 
                 <!-- Character Name: <br> -->
@@ -50,17 +50,23 @@
 <script>
 export default {
     name: "Details",
+    
+
+    
     data (){
         return {
             characters : [],
             birthday : "",
             category : "",
-            img : []
+            img : [],
+            char_id: "",
+            user: null,
         }
     },
+
     mounted(){
       try{
-        fetch('https://www.breakingbadapi.com/api/characters/1')
+        fetch('https://www.breakingbadapi.com/api/characters/')
             .then((res)=> res.json())
             .then((json)=> {
                 console.log(json);
