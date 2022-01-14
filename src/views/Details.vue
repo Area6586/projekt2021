@@ -2,7 +2,8 @@
 <template>
 
   <div class="app">
-    <Details />
+
+  <Info />
 
   
   </div>
@@ -11,16 +12,17 @@
 
 <script>
 // @ is an alias to /src
-import Details from '@/components/Details.vue'
+import Info from '@/components/Info.vue'
 
 
 
 
 export default {
-  name: 'Details',
+  name: 'Info',
   components: {
-    Details,
-  }
+    Info,
+  },
+
 }
 </script>
 

@@ -56,7 +56,7 @@ export default {
       }
       try{
         const character  = await axios.get('https://www.breakingbadapi.com/api/characters/' , config);
-        console.log((character.data));
+        //console.log((character.data));
         this.list = character.data;
       
       }
