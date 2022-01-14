@@ -64,7 +64,7 @@ export default {
         if(this.search  === ""){
             return this.list;
         }
-        console.log(query)
+        //console.log(query)
         return this.list.filter((item) => {
             //return console.log(this.list);
             return Object.values(item).some((word)=> 
@@ -79,7 +79,7 @@ export default {
         fetch('https://www.breakingbadapi.com/api/characters/')
             .then((res)=> res.json())
             .then((json)=> {
-                console.log(json);
+                //console.log(json);
                 this.list = json;
             });
         /*

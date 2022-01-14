@@ -1,18 +1,13 @@
 <template>
- 
+
 <div class="detailBackground">
     <button class="backButton"> &#8249; </button>
-
-        
-        
-      <h1> hello Destination {{$route.params.userId}}</h1>
     <div class="searchFieldDetail">
       <input class="inputFieldDetail" type="text" placeholder=" Find another Character" />
       <button class="inputButton"> Search</button>
     </div>
 
-    <Main :char_id="character.char_id" />
-    <div class="characterDetail"  v-for="character in characters" :key="character.char_id">
+    <div class="characterDetail"  v-for="character in characters" :key="character.userId">
        <div class="characterInfo">
 
                 <!-- Character Name: <br> -->
@@ -53,9 +48,10 @@
 
 
 
+
 export default {
     name: "Info",
-    props: ['char_id'],
+    props: ['userId'],
     
     
     data (){
@@ -64,17 +60,18 @@ export default {
             birthday : "",
             category : "",
             img : [],
-            //char_id: this.$route.params.char_id,
+            char_id: '',
             user: null,
         }
     },
 
     mounted(){
       try{
-        fetch('https://www.breakingbadapi.com/api/characters/')
+        fetch('https://www.breakingbadapi.com/api/characters/' + this.userId)
             .then((res)=> res.json())
             .then((json)=> {
-                console.log(json);
+                //console.log(typeof(json));
+                console.log(json)
                 this.characters = json;
             });
         }
@@ -82,12 +79,12 @@ export default {
         console.log(err)
       }
     },
-      computed: {
-      userId(){
-      return parseInt(this.$route.params.userId)
-    },
+     // computed: {
+      //userId(){
+      //return parseInt(this.$route.params.userId)
+    //},
 
-  }
+  //}
 }
 </script>
 
