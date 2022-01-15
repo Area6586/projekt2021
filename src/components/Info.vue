@@ -33,11 +33,15 @@
        <div class="characterPicture">
           <img :src="character.img" v-bind:img="name" alt="Girl in a jacket" style="width:350px;height:500px;"> 
        </div>
+    
 
 
 </div>
+ 
+
 </div>
-   
+
+<Footer />
   
 </template>
 
@@ -46,13 +50,15 @@
 
 <script>
 
-
-
+import Footer from '@/components/Footer.vue'
 
 export default {
     name: "Info",
     props: ['userId'],
-    
+    query: ['name'],
+    components : {
+      Footer
+    },
     
     data (){
         return {
@@ -71,7 +77,7 @@ export default {
             .then((res)=> res.json())
             .then((json)=> {
                 //console.log(typeof(json));
-                console.log(json)
+                //console.log(json)
                 this.characters = json;
             });
         }

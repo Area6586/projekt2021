@@ -1,11 +1,11 @@
 <template>
 
   <div class="app">
-    <Footer />
-    <Main />
-    <Search />
-  </div>
 
+  <Main />
+  <Search />
+
+  </div>
 
 </template>
 
@@ -13,7 +13,7 @@
 // @ is an alias to /src
 import Main from '@/components/Main.vue'
 import Search from '@/components/Search.vue'
-import Footer from '@/components/Footer.vue'
+
 
 
 
@@ -22,7 +22,6 @@ export default {
   components: {
     Main,
     Search,
-    Footer
   }
 }
 </script>

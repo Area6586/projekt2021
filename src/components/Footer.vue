@@ -18,7 +18,7 @@
 
 export default {
     name: "Footer",
-
+    props: ['name'],
     
     
     data (){
@@ -30,11 +30,11 @@ export default {
 
     mounted(){
       try{
-        fetch('https://breakingbadapi.com/api/death?name=Walter+White')
+        fetch('https://breakingbadapi.com/api/death/?'+ this.name)
             .then((res)=> res.json())
             .then((json)=> {
                 //console.log(typeof(json));
-                console.log(json)
+                console.log(this.name)
                 this.characters = json;
             });
         }
@@ -42,6 +42,9 @@ export default {
         console.log(err)
       }
     },
+    created() {
+    //console.log(this.$route.query);
+  }
      // computed: {
       //userId(){
       //return parseInt(this.$route.params.userId)

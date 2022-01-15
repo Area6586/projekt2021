@@ -7,7 +7,7 @@
     <ul class="List">
         
     <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id ">
-      <router-link :to="{ name: 'Info', params: {userId: user.char_id } }">
+      <router-link :to="{ name: 'Info', params: {userId: user.char_id, name : user.name }}">
       <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture">
       </router-link>
       <h1>{{user.name}}</h1>
