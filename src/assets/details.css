@@ -26,7 +26,6 @@
 }
 
 
-
 .searchFieldDetail {
     position: absolute;
     top: 15%;
@@ -99,4 +98,34 @@
 .characterPicture {
   grid-area: characterPicture;  
   text-align: right;
+}
+
+
+.CharacterName{
+  color: rgb(37, 37, 37);
+  font-family: roboto;
+  font-size: 35px;
+  font-weight: bold;
+}
+.CharacterNickname{
+  color: rgb(37, 37, 37);
+  font-family: roboto;
+  font-size: 35px;
+  font-weight: bold;
+}
+.CharacterOccupation{
+  display: inline-block;
+  color: rgb(37, 37, 37);
+  font-family: roboto;
+  font-size: 35px;
+  font-weight: bold;
+}
+.CharacterAppearance{
+  
+  content: ", ";
+  display: inline-block;
+  color: rgb(37, 37, 37);
+  font-family: roboto;
+  font-size: 35px;
+  font-weight: bold;
 }
