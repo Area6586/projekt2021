@@ -2,20 +2,12 @@
   <div class="detailBackground">
     <button class="backButton">&#8249;</button>
     <div class="searchFieldDetail">
-      
-      <input
-        class="inputFieldDetail"
-        type="text"
-        placeholder=" Find another Character"
-      />
-      <button class="inputButton">Search</button>
-      {{test}}
     </div>
     <div
       class="characterDetail"
       v-for="character in characters"
       :key="character.name"
-      v-bind:category="category"
+      :name="character.name"
     >
     <div class="characterInfo" >
         <!-- Character Name: <br> -->

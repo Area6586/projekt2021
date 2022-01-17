@@ -1,9 +1,9 @@
 <template>
 
   <div class="app">
-
+    <Search />
   <Main />
-  <Search />
+  
 
   </div>
 

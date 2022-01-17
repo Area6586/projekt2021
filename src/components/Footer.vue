@@ -1,10 +1,10 @@
 <template>
 
 <div class="detailBackground">
-     {{category}}
+     {{characters}}
   <div class= "button">
    <button @click="Randomdeath">random</button>
-   {{test}}
+   {{character}}
 
   </div>
 </div>
@@ -12,35 +12,26 @@
   
 </template>
 
-
-
-
 <script>
 
-
-
- 
 export default {
     name: "Footer",
-    props :{
-      category : String
-    },
+    props : ['name'],
     
     
     data (){
         return {
-            //characters : [],
             death : ""
         }
     },
     methods: {
       Randomdeath(){
          try{
-        fetch('https://breakingbadapi.com/api/deaths?'+ this.test)
+        fetch('https://breakingbadapi.com//api/death?name=' + this.name)
             .then((res)=> res.json())
             .then((json)=> {
                 //console.log(typeof(json));
-                console.log(this.test)
+                console.log(this.list)
                 this.death = json;
             });
         }

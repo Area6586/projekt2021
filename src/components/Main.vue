@@ -20,51 +20,34 @@
 
 <script>
 
-import axios from 'axios';
+
 
 export default {
 
   name: "Main",
-  data(){
+    data(){
     return {
-      character: [],
-      id: '0',
-      name: "",
-      img: [],
-      nickname : "",
-      list: []
-    }
+        list: [],
+
+    };
   },
-
-
-  
-/*
-  mounted(){
-    fetch('https://www.breakingbadapi.com/api/characters/')
-    .then(res=> res.json())
-    .then(data => console.log(data))
-  },
-*/
-
-
-  methods: {
-    async info(){
-      let config ={ 
-        headers : {
-          'Accept': 'application/json'
-        }
-      }
+    mounted(){
       try{
-        const character  = await axios.get('https://www.breakingbadapi.com/api/characters/' , config);
-        //console.log((character.data));
-        this.list = character.data;
-      
+        fetch('https://www.breakingbadapi.com/api/characters/')
+            .then((res)=> res.json())
+            .then((json)=> {
+                this.list = json;
+                console.log(typeof(list))
+            });
       }
       catch(err){
         console.log(err)
       }
     },
-  }
+
+
+
+
 }
 </script>
 
