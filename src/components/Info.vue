@@ -1,52 +1,28 @@
 <template>
 
-<div class="detailBackground">
-    
-     <router-link to="/">
-     <button class="backButton"> &#8249;</button>
-     </router-link>
-      
-   
-    <div class="searchFieldDetail">
-      <input class="inputFieldDetail" type="text" placeholder=" Find another Character" />
-      <button class="inputButton"> Search</button>
-    </div>
-
-    <!-- Das Search Feld funktioniert noch nicht. DAs muss man auch noch machen. Wir brauchen eine Auto verfolständigung oder ein Dropdown menü,
-    damit man nur den richtigen namen eingeben kann -->
-
+         
+         
     <div class="characterDetail"  v-for="character in characters" :key="character.userId">
+      
        <div class="characterInfo">
+             <router-link to="/">
+            <button class="backButton"> &#8249;</button>
+            </router-link>
 
                 <div class="CharacterName"> {{character.name}} </div>
-                 <div class="CharacterNickname"> {{character.nickname}} </div>
+                 <div class="CharacterNickname"> "{{character.nickname}}" </div>
                   <br>
-                    <div class="CharacterOccupation" v-for="job in character.occupation" :key="job">
-                      {{job}}<span v-if="job != (character.occupation.length)">, &nbsp;</span> 
-                      </div>
+                    <div class="CharacterOccupation"> {{character.occupation.join(", ")}} </div>
                   <br>
                   <div class="CharacterBirthday">  Birthday: <br>{{character.birthday}} </div>
                   <br>
                   <div class="CharacterPortrayed">  Portrayed by: <br> {{character.portrayed}}</div>
-                  <br>
-                  <div class="CharacterAppearance">  Appeared in Seasons: <br> 
-                  <div class="CharacterAppearance" v-for="seasons in character.appearance" :key="seasons"> 
-                    {{seasons}}<span v-if="seasons != (character.appearance.length)">, &nbsp;</span>
-                    </div>
-        
-                   
-                  </div>
-                  <br>
+                  
+                  <div class="CharacterAppearance"> in Season: {{character.appearance.join(", ")}} </div>
                 
-
-             
-                 
-               
-            
-          
        </div>
        <div class="characterPicture">
-          <img :src="character.img" v-bind:img="name" alt="Girl in a jacket" style="width:350px;height:500px;"> 
+          <img :src="character.img" v-bind:img="name" alt="Girl in a jacket" style="width:400px;height:550px;"> 
        </div>
     
 
@@ -54,7 +30,7 @@
 </div>
  
 
-</div>
+
 
 <Footer />
   
@@ -86,6 +62,8 @@ export default {
             occupation: [],
             user: null,
         }
+
+    
     },
 
     mounted(){
@@ -102,12 +80,9 @@ export default {
         console.log(err)
       }
     },
-     // computed: {
-      //userId(){
-      //return parseInt(this.$route.params.userId)
-    //},
+  
 
-  //}
+ 
 }
 </script>
 

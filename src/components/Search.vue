@@ -4,6 +4,9 @@
     <input class="inputField" type="text" v-model="search" placeholder=" Find Character" />
     <!-- <button class="inputButton" @click="loadapi()">Find Character</button> -->
     </div>
+
+     <button id="TopBtn" @click="topFunction()">TOP</button>
+
     <ul class="List">
         
     <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id ">
@@ -18,7 +21,7 @@
     </ol>
     </ul>
     </body>
-   
+
  
   
   <!-- <section class="randomCharacters">
@@ -92,6 +95,13 @@ export default {
         console.log(err)
       }
     },
+
+       methods: {
+        topFunction() {
+         document.documentElement.scrollTop = 0;
+        }
+        
+  }
 
 }
 </script>
