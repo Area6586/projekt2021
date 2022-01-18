@@ -1,14 +1,13 @@
 <template>
 <body>
   <div class="searchField">
-    <input class="inputField" type="text" v-model="search" placeholder=" Find Character" />
+    <input class="inputField" type="text" v-model="search" placeholder="Find Character" />
     <!-- <button class="inputButton" @click="loadapi()">Find Character</button> -->
-    </div>
+    
 
-     <button id="TopBtn" @click="topFunction()">TOP</button>
+     <button id="TopBtn" @click="topFunction()">Top</button>
 
     <ul class="List">
-        
     <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id ">
       <router-link :to="{ name: 'Info', params: {userId: user.char_id, name : user.name }}">
       <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture">
@@ -20,6 +19,7 @@
         
     </ol>
     </ul>
+    </div>
     </body>
 
  

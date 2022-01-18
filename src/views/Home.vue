@@ -2,7 +2,7 @@
 
   <div class="app">
 
-  <Main />
+  <Header />
   <Search />
 
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 // @ is an alias to /src
-import Main from '@/components/Main.vue'
+import Header from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
 
 
@@ -20,7 +20,7 @@ import Search from '@/components/Search.vue'
 export default {
   name: 'Home',
   components: {
-    Main,
+    Header,
     Search,
   }
 }
