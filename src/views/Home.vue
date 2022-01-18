@@ -1,7 +1,7 @@
 <template>
 
   <div class="app">
-    <Search />
+  <Search />
   <Main />
   
 
@@ -25,3 +25,4 @@ export default {
   }
 }
 </script>
+

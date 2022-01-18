@@ -1,18 +1,19 @@
 <template>
 <body>
   <div class="searchField">
-    <input class="inputField" type="text" v-model="search" placeholder=" Find Character" />
+    <input class="inputField" type="text"  v-model="search" placeholder=" Find Character" />
     </div>
     
     <ul class="List">
         
-    <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id" v-bind:name="user.name">
+    <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id" v-bind:="user.name">
       <router-link :to="{ name: 'Info', params: {userId: user.char_id}}">
       <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture">
       </router-link>
      
       <h1>{{user.name}}</h1>
         <h2>Nickname: <br>{{user.nickname}}</h2>
+    
     </ol>
     </ul>
     </body>
@@ -28,10 +29,25 @@ export default {
   data(){
     return {
         search: "",
-        list : []
+        list : [],
+        options: [
+        { value: "b", text: "Sort By" },
+        { value: "a", text: "name" },
+      ],
     };
   },
+  methods: {
+  sort(){
+    this.list.filter == "b"
+    ?this.list.sort(function(a, b) {
+            return b - a;
+          })
+        : this.list.sort(function(a, b) {
+            return b - a;
+          });
 
+  }
+  },
  computed: {
     filteredQuery() {
         const query = this.search.toLowerCase();
