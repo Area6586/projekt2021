@@ -1,9 +1,11 @@
 <template>
 <div class="hello">
       <div class="Logo">Breaking Bad Wiki</div>
-      <ol class="randomQuote" v-for="random in quotes" :key="random.quote_id "></ol>
-         {{random.quote}}
 
+    <div class="RandomQuotes"  v-for="random in quotes" :key="random.quote_id"> 
+         {{random.quote}}
+         {{random.author}}
+      </div>
 </div>
 
 
