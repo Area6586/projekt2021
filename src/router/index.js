@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 //importing Home components from '../views/Home.vue'
 import Home from '../views/Home.vue'
 import NotFound from '../views/NotFound.vue'
-import Footer from '@/components/Footer.vue'
+import Footer from '@/components/Death.vue'
 import Info from '@/components/Info.vue'
 
 //create route instance of array

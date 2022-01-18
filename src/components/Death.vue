@@ -1,19 +1,16 @@
 <template>
   <div class="detailBackground">
-
-      <div class="character" v-for="name in name" :key="name.name">
+     <button @click="newRandom()">Random</button>
           <div class="death" v-for="death in deaths" :key="death.death">
-           
-           {{name.name}} {{death.death}}
+
+              {{death}}
            </div>
       </div>
-  </div>
 </template>
 
 <script>
 export default {
-  name: "Footer",
-  props: ['name'],                        
+  name: "Footer",                     
   data() {
     return {
       deaths: [],
@@ -21,24 +18,21 @@ export default {
       death_id: "",
     };
   },
-  mounted() {
+  methods: {
+    newRandom() {
     try {
       fetch("https://breakingbadapi.com/api/random-death")
         .then((res) => res.json())
         .then((json) => {
           //console.log(typeof(json));
           console.log(json);
-          console.log(this.characters)
           this.deaths = json;
         });
     } catch (err) {
       console.log(err);
     }
   },
-  methods :{
-    match(){
 
-    }
   }
 };
 </script>
