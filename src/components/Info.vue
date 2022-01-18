@@ -10,15 +10,18 @@
             </router-link>
 
                 <div class="CharacterName"> {{character.name}} </div>
-                 <div class="CharacterNickname"> "{{character.nickname}}" </div>
+
+                 <div class="CharacterNickname"> Alias "{{character.nickname}}" </div>
                   <br>
-                    <div class="CharacterOccupation"> {{character.occupation.join(", ")}} </div>
                   <br>
-                  <div class="CharacterBirthday">  Birthday: <br>{{character.birthday}} </div>
                   <br>
-                  <div class="CharacterPortrayed">  Portrayed by: <br> {{character.portrayed}}</div>
+                    <div class="CharacterOccupation"> <h4> Occupation: </h4>{{character.occupation.join(", ")}} </div>
+                  <br>
+                  <div class="CharacterBirthday"> <h4> Birthday:</h4>{{character.birthday}} </div>
+                  <br>
+                  <div class="CharacterPortrayed"> <h4> Portrayed by:</h4>{{character.portrayed}}</div>
                   
-                  <div class="CharacterAppearance"> in Season: {{character.appearance.join(", ")}} </div>
+                  <div class="CharacterAppearance"> In Season: {{character.appearance.join(", ")}} </div>
                 
        </div>
        <div class="characterPicture">

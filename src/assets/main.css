@@ -150,7 +150,7 @@ body {
 .characterList{
   background-color: black;
   color: rgb(37, 37, 37);
-  box-shadow: 10px 10px 20px #000000b7;
+  box-shadow: 5px 5px 20px #000000b7;
   font-family: roboto;
   font-size: 14px;
   font-weight: bold;

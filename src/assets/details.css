@@ -1,4 +1,4 @@
-/* .detailBackground {
+.detailBackground {
   background-image: url("https://images8.alphacoders.com/638/638451.jpg");
   background-repeat: no-repeat;
   background-position: bottom;
@@ -7,15 +7,19 @@
   margin: -8px;
   margin-bottom: -16px;
 
-}  */
-
+} 
+h4 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
 
 .backButton {
   position: absolute;
   z-index: 1;
   color: white;
   font-family: roboto;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: bold;
   text-align: center;
   border: none;
@@ -24,7 +28,7 @@
   height: 50px;
   width: 50px;
   border-radius: 25px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
   padding-right: 8px;
   top: 5%;
   left: 2.5%;
@@ -33,14 +37,21 @@
 }
 
 .backButton:hover {
-  color:#000000;
-  background-color: rgb(72, 228, 127);
+  background-color: rgb(11, 87, 38);
+  cursor: pointer;
 }
-
+.backButton:active {
+  background-color: rgb(11, 87, 38);
+  cursor: pointer;
+   vertical-align: top;
+   padding-top: 5px;
+}
 
 .characterDetail {  display: grid;
   background-color: rgba(255, 255, 255, 0.8);
-  color: rgb(37, 37, 37);
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 7px #0000001a;
+  box-shadow: 5px 5px 20px #000000b7;
   font-family: roboto;
   font-size: 14px;
   font-weight: bold;
@@ -48,10 +59,9 @@
   height: auto;
   padding: 30px;
   border-radius: 35px;
-  overflow: hidden;
+  position: absolute;
   top: 18%;
   left: 50%;
-  position: absolute;
   transform: translate(-50%);
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -64,8 +74,6 @@
 .characterInfo {
   grid-area: characterInfo;
   text-align: left;
-  margin-top: 70px;
-
 }
 
 .characterPicture {
@@ -73,29 +81,42 @@
   text-align: right;
 }
 
-
 .CharacterName{
-  color: rgb(37, 37, 37);
-  font-family: roboto;
-  font-size: 35px;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  font-size: 40px;
   font-weight: bold;
 }
+
 .CharacterNickname{
-  color: rgb(37, 37, 37);
-  font-family: roboto;
-  font-size: 30px;
-  font-weight: bold;
-}
-.CharacterOccupation{
-  color: rgb(37, 37, 37);
+  text-align: center;
   font-family: roboto;
   font-size: 25px;
   font-weight: bold;
 }
-.CharacterAppearance{
-  display: inline-block;
-  color: rgb(37, 37, 37);
+
+.CharacterOccupation{
   font-family: roboto;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
 }
+
+.CharacterBirthday {
+  font-family: roboto;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.CharacterPortrayed {
+  font-family: roboto;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.CharacterAppearance{
+  display: inline-block;
+  font-family: roboto;
+  font-size: 30px;
+  font-weight: bold;
+}
+
