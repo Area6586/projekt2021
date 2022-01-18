@@ -1,12 +1,14 @@
 .detailBackground {
-  background-image: url("https://images8.alphacoders.com/638/638451.jpg");
+  background: url("https://www.teahub.io/photos/full/72-721277_breaking-bad-4k-hd-desktop-wallpaper-for..jpg");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed ;
+  padding: 458px;
   margin: -8px;
-  margin-bottom: -16px;
-
+  
+  
+  
 } 
 h4 {
   font-size: 24px;
@@ -47,8 +49,9 @@ h4 {
    padding-top: 5px;
 }
 
-.characterDetail {  display: grid;
-  background-color: rgba(255, 255, 255, 0.8);
+.characterDetail { 
+  display: grid;
+  background-color: rgba(255, 255, 255, 0.897);
   color: rgb(0, 0, 0);
   text-shadow: 2px 2px 7px #0000001a;
   box-shadow: 5px 5px 20px #000000b7;
@@ -98,25 +101,25 @@ h4 {
 .CharacterOccupation{
   font-family: roboto;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .CharacterBirthday {
   font-family: roboto;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .CharacterPortrayed {
   font-family: roboto;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .CharacterAppearance{
   display: inline-block;
   font-family: roboto;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 400;
 }
 

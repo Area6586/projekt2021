@@ -1,16 +1,15 @@
 <template>
 
-<div class="detailBackground">
+
 
     <div class="character"  v-for="deaths in characters" :key="deaths.deathId">
         
- {{deaths.death.replace(" ", "+")}}
+ <!-- {{deaths.death.replace(" ", "+")}} -->
  {{this.name}}
 
  </div>
 
-  
-</div>
+
 </template>
 
 

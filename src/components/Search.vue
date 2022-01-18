@@ -1,5 +1,6 @@
 <template>
-<body>
+
+
   <div class="searchField">
     <input class="inputField" type="text" v-model="search" placeholder="Find Character" />
     <!-- <button class="inputButton" @click="loadapi()">Find Character</button> -->
@@ -20,7 +21,7 @@
     </ol>
     </ul>
     </div>
-    </body>
+
 
  
   

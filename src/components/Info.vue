@@ -1,7 +1,8 @@
 <template>
 
-         
-         
+         <div class="detailBackground">
+    
+  
     <div class="characterDetail"  v-for="character in characters" :key="character.userId">
       
        <div class="characterInfo">
@@ -22,6 +23,10 @@
                   <div class="CharacterPortrayed"> <h4> Portrayed by:</h4>{{character.portrayed}}</div>
                   
                   <div class="CharacterAppearance"> In Season: {{character.appearance.join(", ")}} </div>
+                  <br>
+                  <br>
+                  <div class="CharacterAppearance"><h4> Dead or Alive?</h4> {{character.status}} </div>
+
                 
        </div>
        <div class="characterPicture">
@@ -32,7 +37,7 @@
 
 </div>
  
-
+  </div>
 
 
 <Footer />
