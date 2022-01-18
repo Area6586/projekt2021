@@ -33,10 +33,12 @@ export default {
   },
 
  computed: {
+
+   //von youtube videos
     filteredQuery() {
         const query = this.search.toLowerCase();
         if(this.search  === ""){
-            return this.search
+            return this.list
         }
         return this.list.filter((item) => {
             return Object.values(item).some((word)=> 

@@ -1,18 +1,17 @@
 <template>
   <div class="detailBackground">
     <button class="backButton">&#8249;</button>
-    <div class="searchFieldDetail">
-    </div>
     <div
       class="characterDetail"
       v-for="character in characters"
       :key="character.name"
-      :name="character.name"
     >
+   <router-link :to="{name: 'Footer', query: {name: 'character.name'}}"></router-link>
     <div class="characterInfo" >
+      
         <!-- Character Name: <br> -->
         {{ character.name }} <br />
-        
+
         {{ character.nickname }} <br />
         <br />
 
@@ -42,10 +41,10 @@
         />
       </div>
     </div>
-    <Footer />
+
   </div>
 
-
+<Footer v-bind:characters="characters" />
 
 </template>
 
@@ -64,7 +63,6 @@ export default {
     return {
       characters: [],
       birthday: "",
-      category: "test",
       img: [],
       char_id: "",
       user: null,
@@ -77,19 +75,14 @@ export default {
         .then((res) => res.json())
         .then((json) => {
           //console.log(typeof(json));
-          console.log(json)
+          //console.log(json)
           this.characters = json;
         });
     } catch (err) {
       console.log(err);
     }
   },
-  // computed: {
-  //userId(){
-  //return parseInt(this.$route.params.userId)
-  //},
 
-  //}
 };
 </script>
 
