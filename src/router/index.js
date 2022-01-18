@@ -25,10 +25,9 @@ const routes = [
     component: Info
   },
     {
-    path: '/footer/:name',
-    name: 'Footer',
+    path: '/randomdeath',
+    name: 'Death',
     //allwed parameters 
-    props: route => ({ query: route.query }),
     component: Footer
   },
   //catchall 404

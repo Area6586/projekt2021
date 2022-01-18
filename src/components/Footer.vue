@@ -23,7 +23,7 @@ export default {
   },
   mounted() {
     try {
-      fetch("https://breakingbadapi.com/api/death?name=" + this.name)
+      fetch("https://breakingbadapi.com/api/random-death")
         .then((res) => res.json())
         .then((json) => {
           //console.log(typeof(json));

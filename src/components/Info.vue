@@ -6,7 +6,6 @@
       v-for="character in characters"
       :key="character.name"
     >
-   <router-link :to="{name: 'Footer', query: {name: 'character.name'}}"></router-link>
     <div class="characterInfo" >
       
         <!-- Character Name: <br> -->
@@ -44,21 +43,17 @@
 
   </div>
 
-<Footer v-bind:characters="characters" />
+
 
 </template>
 
 <script>
 
-import Footer from '@/components/Footer.vue'
+
 
 export default {
   name: "Info",
   props: ["userId"],
-  components : {
-    Footer
-  },
-
   data() {
     return {
       characters: [],
