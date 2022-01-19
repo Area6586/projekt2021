@@ -27,7 +27,6 @@ h6 {
   font-size: 24px;
   margin: 0;
   padding: 0;
-
 }
 
 .Logo {
@@ -41,7 +40,6 @@ h6 {
   padding-left: 0px;
   padding-top: 2.5%;
   font-size: 60px;
-  
 }
 
 .RandomQuotes{
@@ -66,7 +64,6 @@ h6 {
 .Quotes {
   text-align: left;
   font-size: 28px;
-  
 }
 
 .QuoteAuthor{
@@ -146,7 +143,6 @@ h6 {
 .searchField{
     position: relative;
     margin-top: 120px;
-    
 }
 
 .inputField {
@@ -227,8 +223,7 @@ h6 {
    padding-top: 6px;
 }
 
-
-/* Code aus Youtube Tutorial*/
+/* Code aus Youtube vue Einsteiger Tutorial, Link nicht vorhanden*/
 .lds-dual-ring {
   position: absolute;
   z-index: 1;
@@ -251,6 +246,7 @@ h6 {
   border-color: rgb(53, 53, 53) transparent rgb(53, 53, 53) transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);

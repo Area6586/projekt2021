@@ -1,16 +1,10 @@
 <template>
-
-
   <div class="app">
-
-  <Header />
-  <Search />
-  <Main />
-  <Death />
-  
-
+    <Header />
+    <Search />
+    <Main />
+    <Death />
   </div>
-
 </template>
 
 <script>
@@ -18,10 +12,6 @@
 import Header from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
 import Death from '@/components/Death.vue'
-
-
-
-
 
 export default {
   name: 'Home',

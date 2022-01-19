@@ -37,7 +37,6 @@
   transform: translate(-50%, 0%);
 }
 
-
 .deathInfo {
     grid-area: deathInfo;
     margin-right: -20%;
@@ -70,7 +69,6 @@ font-weight: bold;
 .deathPicture {
     grid-area: deathPicture;
     text-align: right;
-     
 }
 
 .DeathBTN {
@@ -94,13 +92,13 @@ font-weight: bold;
   margin-bottom: 150px;
   left: 50%;
   transform: translate(-50%, 0%);
-  
 }
 
 .DeathBTN:hover {
   background-color: rgb(11, 87, 38);
   cursor: pointer;
 }
+
 .DeathBTN:active {
   background-color: rgb(11, 87, 38);
   cursor: pointer;
