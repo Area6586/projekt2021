@@ -5,6 +5,9 @@ import NotFound from '../views/NotFound.vue'
 import Footer from '@/components/Death.vue'
 import Info from '@/components/Info.vue'
 
+
+
+// gelernt von folgendem tutorial https://www.youtube.com/watch?v=juocv4AtrHo
 //create route instance of array
 const routes = [
   //different objects
