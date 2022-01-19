@@ -1,6 +1,6 @@
 <template>
 
-
+<div class="lds-dual-ring" v-if="loading"></div>
   <div class="searchField">
     <button id="BottomBtn" @click="bottomFunction()">Death!</button>
     <input class="inputField" type="text" v-model="search" placeholder="Find Character" />
@@ -33,6 +33,7 @@ export default {
     return {
       search: "",
       list: [],
+      loading: false,
     };
   },
 
@@ -46,20 +47,24 @@ export default {
       return this.list.filter((item) => {
         return Object.values(item).some((word) =>
           String(word).toLowerCase().includes(query)
+                  
         );
       });
     },
   },
   mounted() {
+    this.loading = true;
     try {
       fetch("https://www.breakingbadapi.com/api/characters/")
         .then((res) => res.json())
         .then((json) => {
           this.list = json;
           console.log(typeof list);
+          this.loading = false;
         });
     } catch (err) {
       console.log(err);
+      this.loading = true;
     }
   },
   
