@@ -1,4 +1,5 @@
 <template>
+
 <div class="hello">
       <div class="Logo">Breaking Bad Character Wiki</div>
 
@@ -6,8 +7,7 @@
     <div class="RandomQuotes" v-for="random in quotes" :key="random.quote_id"> 
          <div class="Quotes" >{{random.quote}}</div>
          <div class="QuoteAuthor">{{random.author}} </div>
-         
-      </div>
+    </div>
       <button class="QuoteBtn" @click="getQuote()">Get another quote!</button> 
 </div>
 
@@ -42,8 +42,10 @@ export default {
       catch(err){
         console.log(err)
       }
-    }
-        },
+    },
+
+
+  },
         
   
  
@@ -72,7 +74,7 @@ mounted(){
       catch(err){
         console.log(err)
       }
-    }
+    },
  
 }
 

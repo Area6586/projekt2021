@@ -9,11 +9,7 @@
 
 }  */
 
-h4 {
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-}
+
 
 .backButton {
   position: absolute;
@@ -25,6 +21,7 @@ h4 {
   text-align: center;
   border: none;
   background-color: rgba(54, 148, 87);
+  box-shadow: 5px 5px 10px #00000086;
   text-shadow: 2px 2px 7px #000000;
   height: 50px;
   width: 50px;
@@ -44,17 +41,17 @@ h4 {
 .backButton:active {
   background-color: rgb(11, 87, 38);
   cursor: pointer;
-   vertical-align: top;
-   padding-top: 5px;
+  vertical-align: top;
+  padding-top: 5px;
 }
 
 .characterDetail { 
   display: grid;
   background-color: rgba(255, 255, 255, 0.897);
   color: rgb(0, 0, 0);
-  text-shadow: 2px 2px 7px #0000001a;
+  text-shadow: 2px 2px 7px #a39d9dbe;
   box-shadow: 5px 5px 20px #000000b7;
-  font-family: roboto;
+  font-family: 'Roboto Slab', serif;
   font-size: 14px;
   font-weight: bold;
   width: 60%;
@@ -92,33 +89,69 @@ h4 {
 
 .CharacterNickname{
   text-align: center;
-  font-family: roboto;
+  font-family: 'Roboto Slab', serif;
   font-size: 25px;
   font-weight: bold;
 }
 
 .CharacterOccupation{
   font-family: roboto;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 400;
 }
 
 .CharacterBirthday {
   font-family: roboto;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 400;
 }
 
 .CharacterPortrayed {
   font-family: roboto;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 400;
 }
 
 .CharacterAppearance{
   display: inline-block;
   font-family: roboto;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 400;
 }
 
+#CharacterStatus {
+  display: none;
+  font-family: roboto;
+  font-weight: bold;
+  font-size: 34px;
+  margin-top: 10px;
+
+}
+
+#deadOrAliveBtn {
+  position: absolute;
+  color: white;
+  font-family: roboto;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  background-color: rgba(54, 148, 87);
+  text-shadow: 2px 2px 7px #000000;
+  box-shadow: 5px 5px 10px #00000086;
+  height: 50px;
+  width: 160px;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+#deadOrAliveBtn:hover {
+  background-color: rgb(11, 87, 38);
+  cursor: pointer;
+}
+#deadOrAliveBtn:active {
+  background-color: rgb(11, 87, 38);
+  cursor: pointer;
+   vertical-align: top;
+   padding-top: 5px;
+}

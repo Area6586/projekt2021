@@ -1,16 +1,17 @@
 <template>
 
-
+<div class="lds-dual-ring" v-if="loading"></div>
   <div class="searchField">
-    
+    <button id="BottomBtn" @click="bottomFunction()">Death!</button>
     <input class="inputField" type="text" v-model="search" placeholder="Find Character" />
+    
     <ul class="List">
     <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id ">
       <router-link :to="{ name: 'Info', params: {userId: user.char_id, name : user.name }}">
       <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture">
       </router-link>
       {{user.name}}
-        <h4> Alias "{{user.nickname}}"</h4>
+        <h5> Alias "{{user.nickname}}"</h5>
         <!-- <h4>Date of birth: {{user.birthday}}</h4>
         <h4>End of series: {{user.status}}</h4> -->
         
@@ -20,6 +21,8 @@
   <button id="TopBtn" @click="topFunction()">Top</button>
   <button id="BottomBtn" @click="bottomFunction()">Top</button>
     </div>
+
+<button id="TopBtn" @click="topFunction()">Top</button>
 
  
   
@@ -33,6 +36,7 @@ export default {
     return {
       search: "",
       list: [],
+      loading: false,
     };
   },
 
@@ -46,20 +50,24 @@ export default {
       return this.list.filter((item) => {
         return Object.values(item).some((word) =>
           String(word).toLowerCase().includes(query)
+                  
         );
       });
     },
   },
   mounted() {
+    this.loading = true;
     try {
       fetch("https://www.breakingbadapi.com/api/characters/")
         .then((res) => res.json())
         .then((json) => {
           this.list = json;
           console.log(typeof list);
+          this.loading = false;
         });
     } catch (err) {
       console.log(err);
+      this.loading = true;
     }
   },
   
@@ -68,10 +76,11 @@ export default {
         topFunction() {
          document.documentElement.scrollTop = 0;
         },
-        bottomFunction() {
-         document.documentElement.scrollTop = 6000;
-        }
         
+    bottomFunction() {
+         document.documentElement.scrollTop = 10000;
+        }
+                
   }
 
 }

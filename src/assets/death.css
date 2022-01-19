@@ -1,12 +1,4 @@
 
-h4 {
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-}
-
-
-
 .DeathHeader{
   position: relative;
   font-family: 'Roboto Slab', serif;
@@ -20,21 +12,19 @@ h4 {
   margin-right: auto;
   padding: 20px;
   color: white;
-
-  
-  
 }
 
-.randomDeathGrid { 
-  display: grid;
+#randomDeathGrid { 
+  display: none;
   color: rgb(37, 37, 37);
-  background-color: rgba(255, 255, 255, 0.8);
-  font-family: roboto;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: 'Roboto Slab', serif;
   font-size: 16px;
-  font-weight: bold;
   min-height: 100px;
   width: 545px;
   padding: 30px;
+  margin-top: -100px;
+  margin-bottom: 4%;
   position: relative;
   border-radius: 35px;
   grid-template-columns: 1fr 1fr;
@@ -45,48 +35,44 @@ h4 {
   "deathInfo deathPicture";
   left: 50%;
   transform: translate(-50%, 0%);
-    
+
 }
 
 
 .deathInfo {
     grid-area: deathInfo;
+    margin-right: -20%;
+     margin-left: 2%;
 
 }
 
 .deathName {
     text-align: center;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 28px;
     
 }
 
 .deathNickname {
-     text-align: center;
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-    
+    font-weight: bold;
+    text-align: center;    
 }
 
 .deathCause {
-    
-    font-family: roboto;
-    font-weight: 400;
+  font-weight: normal;
 }
 
 /* .deathResponsible {
 
-} */
+}  */
 
 .deathLastWords {
-    
-    font-family: roboto;
-    font-weight: 400;
+    font-weight: normal;
 }
 
 .deathPicture {
     grid-area: deathPicture;
-     text-align: right;
+    text-align: right;
      
 }
 
@@ -94,6 +80,7 @@ h4 {
   display: inline-block;
   position: relative;
   color: white;
+  font-variant: small-caps;
   font-family: roboto;
   font-size: 20px;
   font-weight: bold;
@@ -101,15 +88,16 @@ h4 {
   border: none;
   background-color: rgba(54, 148, 87);
   text-shadow: 2px 2px 7px #000000;
+  box-shadow: 2px 2px 7px #000000b7;
   height: auto;
-  width: 200px;
+  width: 280px;
   border-radius: 20px;
   padding: 7px;
-  margin-top: 20px;
-  margin-bottom: -5px;
-  left: 100%;
+  margin-top: 10px;
+  margin-bottom: 150px;
+  left: 50%;
   transform: translate(-50%, 0%);
-  box-shadow: 2px 2px 7px #000000b7;
+  
 }
 
 .DeathBTN:hover {
