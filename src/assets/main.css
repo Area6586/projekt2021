@@ -219,11 +219,19 @@ h6 {
    padding-top: 6px;
 }
 
+
+/* Code aus Youtube Tutorial*/
 .lds-dual-ring {
+  position: absolute;
+  z-index: 1;
   display: inline-block;
   width: 80px;
   height: 80px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
+
 .lds-dual-ring:after {
   content: " ";
   display: block;
@@ -231,13 +239,14 @@ h6 {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid black;
-  border-color: black transparent black transparent;
+  border: 10px solid rgb(255, 255, 255);
+  border-color: rgb(53, 53, 53) transparent rgb(53, 53, 53) transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
+    
   }
   100% {
     transform: rotate(360deg);

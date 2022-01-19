@@ -15,7 +15,7 @@
                  <div class="CharacterNickname"> Alias "{{character.nickname}}" </div>
                   <br>
                   <br>
-                  <div class="CharacterOccupation"> <h6> Occupation: </h6>{{character.occupation.join(", ")}} </div>
+                  <div class="CharacterOccupation"> <h6> Profession: </h6>{{character.occupation.join(", ")}} </div>
                   <br>
                   <div class="CharacterBirthday"> <h6> Birthday:</h6>{{character.birthday}} </div>
                   <br>

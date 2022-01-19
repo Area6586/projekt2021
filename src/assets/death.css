@@ -35,7 +35,6 @@
   "deathInfo deathPicture";
   left: 50%;
   transform: translate(-50%, 0%);
-
 }
 
 
@@ -43,14 +42,12 @@
     grid-area: deathInfo;
     margin-right: -20%;
      margin-left: 2%;
-
 }
 
 .deathName {
     text-align: center;
     font-weight: bold;
     font-size: 28px;
-    
 }
 
 .deathNickname {
@@ -62,9 +59,9 @@
   font-weight: normal;
 }
 
-/* .deathResponsible {
-
-}  */
+.deathResponsible {
+font-weight: bold;
+}  
 
 .deathLastWords {
     font-weight: normal;
@@ -90,7 +87,7 @@
   text-shadow: 2px 2px 7px #000000;
   box-shadow: 2px 2px 7px #000000b7;
   height: auto;
-  width: 280px;
+  width: 200px;
   border-radius: 20px;
   padding: 7px;
   margin-top: 10px;

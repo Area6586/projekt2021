@@ -1,11 +1,10 @@
 <template>
   
- 
   <div class="DeathHeader">Get Random Death</div> 
   <button class="DeathBTN" @click="newRandom(), showDeathContent()">get random death</button>
      <div id="randomDeathGrid">
+       
         <div class="deathInfo">
-          
               <div class="deathName"> {{deaths.death}} </div>
               <div class="deathNickname"> "{{deaths.nickname}}"</div>
               <br> 
@@ -14,7 +13,7 @@
                {{deaths.cause}}
               </div>
              
-              <div class="deathResponsible">  by {{deaths.responsible}} </div>
+              <div class="deathResponsible">  By {{deaths.responsible}} </div>
               <br>
               <div class="deathLastWords"> <h4> Last Words: </h4>
                 {{deaths.last_words}}
@@ -58,7 +57,7 @@ export default {
   
   showDeathContent() {
       document.getElementById("randomDeathGrid").style.display = 'grid';
-      document.documentElement.scrollTop = 10000;
+      document.documentElement.scrollTop = document.body.scrollHeight;
   }
   },
 

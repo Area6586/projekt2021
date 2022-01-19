@@ -1,8 +1,8 @@
 <template>
 
 <div class="hello">
-      <div class="Logo">Breaking Bad Character Wiki</div>
 
+      <div class="Logo">Breaking Bad Character Wiki</div>
 
     <div class="RandomQuotes" v-for="random in quotes" :key="random.quote_id"> 
          <div class="Quotes" >{{random.quote}}</div>
