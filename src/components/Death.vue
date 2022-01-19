@@ -1,27 +1,34 @@
 <template>
-  <div class="detailBackground">
-  <button class="DeathBTN" @click="newRandom()">Random</button>
-
-     <div class="randomDeath">
+  
+ 
+  <div class="DeathHeader">Get Random Death</div> 
+     <div class="randomDeathGrid">
         <div class="Deathinfo">
           
               <div class="deathName"> {{deaths.death}} </div>
-              <div class="deathNickname"> "{{deaths.nickname}}" </div>
+              <div class="deathNickname"> "{{deaths.nickname}}"</div>
               <br> 
             
               <div class="deathCause"> <h4> Cause of Death: </h4>
-              {{deaths.cause}} </div>
+               {{deaths.cause}}
+              </div>
              
               <div class="deathResponsible">  by {{deaths.responsible}} </div>
               <br>
-              <div class="deathLastWords"> <h4> Last Words: </h4> {{deaths.last_words}} </div>
+              <div class="deathLastWords"> <h4> Last Words: </h4>
+                {{deaths.last_words}}
+              </div>
               <br>
         </div>
 
               <div class="deathPicture">
-              <img :src="deaths.img"  v-bind:img="death" alt="Picture" style="width: 175px; height: 250px" /> </div>
+                <img :src="deaths.img"  v-bind:img="death" alt="Picture" style="width: 175px; height: 250px" />
+              </div>
+              <button class="DeathBTN" @click="newRandom()">Random</button>
       </div>
-      </div>
+      
+
+      
 </template>
 
 <script>
