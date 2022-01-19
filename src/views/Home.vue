@@ -4,6 +4,7 @@
     <Header />
   <Search />
   <Main />
+  <Death />
   
 
   </div>
@@ -15,6 +16,7 @@
 import Main from '@/components/Main.vue'
 import Search from '@/components/Search.vue'
 import Header from '@/components/Header.vue'
+import Death from '@/components/Death.vue'
 
 
 
@@ -25,7 +27,8 @@ export default {
   components: {
     Main,
     Search,
-    Header
+    Header,
+    Death
   }
 }
 </script>
