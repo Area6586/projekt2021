@@ -16,10 +16,11 @@
         
     </ol>
     </ul>
+    
+  <button id="TopBtn" @click="topFunction()">Top</button>
+  <button id="BottomBtn" @click="bottomFunction()">Top</button>
     </div>
 
-<button id="TopBtn" @click="topFunction()">Top</button>
-<button id="BottomBtn" @click="bottomFunction()">Top</button>
  
   
 </template>
