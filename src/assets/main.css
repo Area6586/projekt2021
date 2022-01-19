@@ -8,7 +8,6 @@ body {
   background-position: bottom;
   background-size: cover;
   background-attachment: fixed;
-    
   }
 
 .Logo {
@@ -25,42 +24,117 @@ body {
   
 }
 
+.RandomQuotes{
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 9%;
+  padding: 20px;
+  padding-left: 30%;   
+  padding-right: 30%;
+  color: white;
+  text-shadow: 10px 10px 15px #000000cc;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-style: italic;
+  /* outline-style: solid;
+  outline-width: 10px; */
+}
+
+.Quotes {
+  text-align: left;
+  font-size: 28px;
+  
+}
+
+.QuoteAuthor{
+  text-align: right;
+  font-size: 25px;
+  position: relative; 
+}
+
+.QuoteBtn {
+  display: inline-block;
+  position: absolute;
+  color: white;
+  font-family: roboto;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  background-color: rgba(54, 148, 87);
+  text-shadow: 2px 2px 7px #000000;
+  height: auto;
+  width: 200px;
+  border-radius: 20px;
+  padding: 7px;
+  margin-top: 20px;
+  left: 45.3%;
+  box-shadow: 2px 2px 7px #000000b7;
+}
+
+.QuoteBtn:hover {
+  background-color: rgb(11, 87, 38);
+  cursor: pointer;
+}
+.QuoteBtn:active {
+  background-color: rgb(11, 87, 38);
+  cursor: pointer;
+   vertical-align: top;
+   padding: 8px 13px 6px;
+}
+
+#TopBtn{
+  position: fixed;
+  top: 88%;  
+  right: 2.5%;
+  color: white;
+  font-family: roboto;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  background-color: rgb(40, 122, 69);
+  text-shadow: 2px 2px 7px #000000;
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  padding-right: 5px;
+  box-shadow: 2px 2px 7px #000000b7;
+}
+#TopBtn:hover {
+  background-color: rgb(11, 87, 38);
+  cursor: pointer;
+}
+#TopBtn:active {
+  cursor: pointer;
+   vertical-align: top;
+   padding-top: 6px;
+}
+
+
 .searchField{
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%);
-    overflow: hidden;
+    position: relative;
+    margin-top: 6%;
     
 }
 
 .inputField {
-  font-size: 22px;
+  font-family: roboto ;
+  padding-left: 20px;
+  font-size: 28px;
   border: none;
+  border-color: rgb(212, 212, 212);
   background-color: rgba(255, 255, 255, 0.85);
-  height: 35px;
-  width: 300px;
+  height: 50px;
+  width: 320px;
+  margin-left: 9.1%;
   margin-right: 20px;
   border-radius: 25px;
+  box-shadow: 2px 2px 7px #000000b7;
   
-    
-}
-.inputButton {
-  color: white;
-  font-family: roboto;
-  font-size: 23px;
-  font-weight: bold;
-  border: none;
-  background-color: rgba(54, 148, 87);
-  text-shadow: 2px 2px 7px #000000;
-  height: 35px;
-  width: 210px;
-  border-radius: 25px;
-  
-}
-
-.inputButton:hover {
-    background-color: #032202;
     
 }
 
@@ -70,13 +144,12 @@ body {
   
 }
 
-.List {
-padding-top: 350px;
-}
+
 
 .characterList{
   background-color: black;
   color: rgb(37, 37, 37);
+  box-shadow: 5px 5px 20px #000000b7;
   font-family: roboto;
   font-size: 14px;
   font-weight: bold;
@@ -88,8 +161,9 @@ padding-top: 350px;
   min-height: 250px;
   margin: 30px;
   padding: 30px;
+  margin-top: 5px;
   top: 200px;
-  transform: translate(35%, 0);
+  transform: translate(29%, 0);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 35px;
   overflow: hidden;

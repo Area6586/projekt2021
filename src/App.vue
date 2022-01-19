@@ -1,8 +1,11 @@
 <template>
-  <div id="app">
-      <router-link to="/randomdeath">page 3</router-link>
-    <router-view></router-view>
-  </div>
+
+  <!-- <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </div> -->
+  <router-view/>
+
 </template>
 <script>
 export default {

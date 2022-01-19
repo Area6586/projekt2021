@@ -1,50 +1,45 @@
 <template>
-  <div class="detailBackground">
-    <button class="backButton">&#8249;</button>
-    <div
-      class="characterDetail"
-      v-for="character in characters"
-      :key="character.name"
-    >
-    <div class="characterInfo" >
+
+         <div class="detailBackground">
+    
+  
+    <div class="characterDetail"  v-for="character in characters" :key="character.userId">
       
-        <!-- Character Name: <br> -->
-        {{ character.name }} <br />
+       <div class="characterInfo">
+             <router-link to="/">
+            <button class="backButton"> &#8249;</button>
+            </router-link>
 
-        {{ character.nickname }} <br />
-        <br />
+                <div class="CharacterName"> {{character.name}} </div>
 
-        {{ character.occupation }} <br />
-        <br />
+                 <div class="CharacterNickname"> Alias "{{character.nickname}}" </div>
+                  <br>
+                  <br>
+                  <br>
+                    <div class="CharacterOccupation"> <h4> Occupation: </h4>{{character.occupation.join(", ")}} </div>
+                  <br>
+                  <div class="CharacterBirthday"> <h4> Birthday:</h4>{{character.birthday}} </div>
+                  <br>
+                  <div class="CharacterPortrayed"> <h4> Portrayed by:</h4>{{character.portrayed}}</div>
+                  
+                  <div class="CharacterAppearance"> In Season: {{character.appearance.join(", ")}} </div>
+                  <br>
+                  <br>
+                  <div class="CharacterAppearance"><h4> Dead or Alive?</h4> {{character.status}} </div>
 
-        Birthday: <br />
-        {{ character.birthday }} <br />
-        <br />
+                
+       </div>
+       <div class="characterPicture">
+          <img :src="character.img" v-bind:img="name" alt="Girl in a jacket" style="width:400px;height:550px;"> 
+       </div>
+    
 
-        Portrayed by: <br />
-        {{ character.portrayed }} <br />
-        <br />
 
-        appeared in: <br />
-        {{ character.appearance }} <br />
-        <br />
-
-        {{ character.status }}
-      </div>
-      <div class="characterPicture">
-        <img
-          :src="character.img"
-          v-bind:img="name"
-          alt="Girl in a jacket"
-          style="width: 350px; height: 500px"
-        />
-      </div>
-    </div>
-
+</div>
+ 
   </div>
 
-
-
+  
 </template>
 
 <script>
@@ -52,33 +47,44 @@
 
 
 export default {
-  name: "Info",
-  props: ["userId"],
-  data() {
-    return {
-      characters: [],
-      birthday: "",
-      img: [],
-      char_id: "",
-      user: null,
-    };
-  },
+    name: "Info",
+    props: ['userId'],
+    query: ['name'],
+   
 
-  mounted() {
-    try {
-      fetch("https://www.breakingbadapi.com/api/characters/" + this.userId)
-        .then((res) => res.json())
-        .then((json) => {
-          //console.log(typeof(json));
-          //console.log(json)
-          this.characters = json;
-        });
-    } catch (err) {
-      console.log(err);
-    }
-  },
+    data (){
+        return {
+            characters : [],
+            birthday : "",
+            category : "",
+            img : [],
+            char_id: '',
+            appearance: [],
+            occupation: [],
+            user: null,
+        }
 
-};
+    
+    },
+
+    mounted(){
+      try{
+        fetch('https://www.breakingbadapi.com/api/characters/' + this.userId)
+            .then((res)=> res.json())
+            .then((json)=> {
+                //console.log(typeof(json));
+                //console.log(json)
+                this.characters = json;
+            });
+        }
+        catch(err){
+        console.log(err)
+      }
+    },
+  
+
+ 
+}
 </script>
 
 <style></style>
