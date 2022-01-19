@@ -2,8 +2,9 @@
   
  
   <div class="DeathHeader">Get Random Death</div> 
-     <div class="randomDeathGrid">
-        <div class="Deathinfo">
+  <button class="DeathBTN" @click="newRandom(), showDeathContent()">get random death</button>
+     <div id="randomDeathGrid">
+        <div class="deathInfo">
           
               <div class="deathName"> {{deaths.death}} </div>
               <div class="deathNickname"> "{{deaths.nickname}}"</div>
@@ -20,11 +21,10 @@
               </div>
               <br>
         </div>
-
               <div class="deathPicture">
                 <img :src="deaths.img"  v-bind:img="death" alt="Picture" style="width: 175px; height: 250px" />
               </div>
-              <button class="DeathBTN" @click="newRandom()">Random</button>
+              
       </div>
       
 
@@ -55,28 +55,12 @@ export default {
       console.log(err);
     }
   },
-
+  
+  showDeathContent() {
+      document.getElementById("randomDeathGrid").style.display = 'grid';
+      document.documentElement.scrollTop = 10000;
+  }
   },
 
-   mounted() {
-   try {
-      fetch("https://breakingbadapi.com/api/random-death")
-        .then((res) => res.json())
-        .then((json) => {
-          console.log(typeof(json));
-          console.log(json);
-          this.deaths = json;
-        });
-    } catch (err) {
-      console.log(err);
-    }
-  },
 };
 </script>
-
-
-<style scoped>
-
-
-
-</style>

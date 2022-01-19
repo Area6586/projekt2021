@@ -10,6 +10,26 @@ body {
   background-attachment: fixed;
   }
 
+h4 {
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+h6 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+
+}
+
 .Logo {
   color: white;
   text-shadow: 10px 10px 15px #000000cc;
@@ -19,7 +39,7 @@ body {
   position: relative;
   text-align: center;
   padding-left: 0px;
-  padding-top: 3.5%;
+  padding-top: 2.5%;
   font-size: 60px;
   
 }
@@ -150,7 +170,7 @@ body {
   background-color: black;
   color: rgb(37, 37, 37);
   box-shadow: 5px 5px 20px #000000b7;
-  font-family: roboto;
+  font-family: 'Roboto Slab', serif;
   font-size: 22px;
   font-weight: bold;
   width: 250px;
@@ -167,17 +187,15 @@ body {
   margin-bottom: 40px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 35px;
-  
 }
-
 
 #BottomBtn{
   position: fixed;
-  top: 18%;  
+  top: 2%;  
   right: 1.6%;
   color: white;
   font-family: roboto;
-  font-size: 35px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
   border: none;
@@ -189,13 +207,17 @@ body {
   padding-right: 5px;
   box-shadow: 2px 2px 7px #000000b7;
 }
+
 #BottomBtn:hover {
   background-color: rgb(11, 87, 38);
   cursor: pointer;
 }
+
 #BottomBtn:active {
   cursor: pointer;
    vertical-align: top;
    padding-top: 6px;
 }
+
+
 

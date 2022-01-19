@@ -15,17 +15,17 @@
                  <div class="CharacterNickname"> Alias "{{character.nickname}}" </div>
                   <br>
                   <br>
+                  <div class="CharacterOccupation"> <h6> Occupation: </h6>{{character.occupation.join(", ")}} </div>
                   <br>
-                    <div class="CharacterOccupation"> <h4> Occupation: </h4>{{character.occupation.join(", ")}} </div>
+                  <div class="CharacterBirthday"> <h6> Birthday:</h6>{{character.birthday}} </div>
                   <br>
-                  <div class="CharacterBirthday"> <h4> Birthday:</h4>{{character.birthday}} </div>
+                  <div class="CharacterPortrayed"> <h6> Portrayed by:</h6>{{character.portrayed}}  in Season: {{character.appearance.join(", ")}} </div>
+
                   <br>
-                  <div class="CharacterPortrayed"> <h4> Portrayed by:</h4>{{character.portrayed}}</div>
+                     <h6> Dead or Alive?</h6> 
+                  <button id="deadOrAliveBtn" @click="showContent()"> find out! </button>
+                  <div id="CharacterStatus">{{character.status}}</div>
                   
-                  <div class="CharacterAppearance"> In Season: {{character.appearance.join(", ")}} </div>
-                  <br>
-                  <br>
-                  <div class="CharacterAppearance"><h4> Dead or Alive?</h4> {{character.status}} </div>
 
                 
        </div>
@@ -81,10 +81,19 @@ export default {
         console.log(err)
       }
     },
+
+    methods: {
+      showContent() {
+      document.getElementById("CharacterStatus").style.display = 'inline-block';
+      document.getElementById("deadOrAliveBtn").style.display = 'none';
+}
+    }
   
 
  
 }
 </script>
 
-<style></style>
+<style>
+
+</style>
