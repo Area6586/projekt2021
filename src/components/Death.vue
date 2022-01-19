@@ -1,9 +1,10 @@
 <template>
   <div class="detailBackground">
      <button @click="newRandom()">Random</button>
-          <div class="death" v-for="death in deaths" :key="death.death">
+     {{deaths.death}}
+          <div class="death" v-for="(value, key) in deaths" :key="key">
 
-              {{death}}
+              {{value}}
            </div>
       </div>
 </template>
@@ -24,7 +25,7 @@ export default {
       fetch("https://breakingbadapi.com/api/random-death")
         .then((res) => res.json())
         .then((json) => {
-          //console.log(typeof(json));
+          console.log(typeof(json));
           console.log(json);
           this.deaths = json;
         });
