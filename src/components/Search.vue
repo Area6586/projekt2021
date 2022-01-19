@@ -3,7 +3,7 @@
   <div class="searchField">
     <button id="BottomBtn" @click="bottomFunction()">Death!</button>
     <input class="inputField" type="text" v-model="search" placeholder="Find Character" />
-    <div class = "sort">
+    <div class="sort">
     <select v-model="sortatoz" @change="sortName">
       <option disabled value="">Sort Character by Name</option>
       <option value="a-z">a-z</option>
