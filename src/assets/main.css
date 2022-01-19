@@ -124,13 +124,13 @@ body {
 .inputField {
   font-family: roboto ;
   padding-left: 20px;
-  font-size: 28px;
+  font-size: 20px;
   border: none;
   border-color: rgb(212, 212, 212);
   background-color: rgba(255, 255, 255, 0.85);
-  height: 50px;
-  width: 320px;
-  margin-left: 9.1%;
+  height: 30px;
+  width: 538px;
+  margin-left: 10.35%;
   margin-right: 20px;
   border-radius: 25px;
   box-shadow: 2px 2px 7px #000000b7;
@@ -139,8 +139,8 @@ body {
 }
 
 .searchimg {
-  height: 400px;
-  width: 280px;
+  height: 200px;
+  width: 140px;
   
 }
 
@@ -151,10 +151,10 @@ body {
   color: rgb(37, 37, 37);
   box-shadow: 5px 5px 20px #000000b7;
   font-family: roboto;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
-  width: 280px;
-  height: 530px;
+  width: 190px;
+  height: 340px;
   display: inline-block;
   vertical-align: top;
   text-align: left;
@@ -163,7 +163,7 @@ body {
   padding: 30px;
   margin-top: 5px;
   top: 200px;
-  transform: translate(29%, 0);
+  transform: translate(50%, 0);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 35px;
   overflow: hidden;
