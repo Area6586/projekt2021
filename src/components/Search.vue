@@ -11,15 +11,9 @@
       <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture">
       </router-link>
       {{user.name}}
-        <h5> Alias "{{user.nickname}}"</h5>
-        <!-- <h4>Date of birth: {{user.birthday}}</h4>
-        <h4>End of series: {{user.status}}</h4> -->
-        
+        <h5> Alias "{{user.nickname}}"</h5>        
     </ol>
     </ul>
-    
-  <button id="TopBtn" @click="topFunction()">Top</button>
-  <button id="BottomBtn" @click="bottomFunction()">Top</button>
     </div>
 
 <button id="TopBtn" @click="topFunction()">Top</button>
@@ -70,12 +64,11 @@ export default {
       this.loading = true;
     }
   },
-       methods: {
+    methods: {
         topFunction() {
          document.documentElement.scrollTop = 0;
-        },
-        
-    bottomFunction() {
+        },   
+        bottomFunction() {
          document.documentElement.scrollTop = 10000;
         }
                 
