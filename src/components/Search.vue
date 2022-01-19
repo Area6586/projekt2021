@@ -3,18 +3,16 @@
   <div class="searchField">
     <button id="BottomBtn" @click="bottomFunction()">Death!</button>
     <input class="inputField" type="text" v-model="search" placeholder="Find Character" />
-    <!--  sort teilweise Fremdcode -->
-    <div class="sort">
+    <!--  sortMenu teilweise Fremdcode Link siehe Function, CSS von https://freefrontend.com/css-select-boxes/  "Custom Select Box" uauf unseren Style angepasst-->
+    <div class="sortMenu">
       <select v-model="sortatoz" @change="sortName">
-        <option disabled value>Sort Character by Name</option>
+        <option disabled value>Sort character by name</option>
         <option value="a-z">a-z</option>
         <option value="z-a">z-a</option>
       </select>
     </div>
-
     <ul class="List">
       <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id">
-
         <!-- gelernt von felgendem tutorial https://www.youtube.com/watch?v=juocv4AtrHo -->
         <router-link :to="{ name: 'Info', params: { userId: user.char_id, name: user.name } }">
           <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture" />
@@ -90,6 +88,4 @@ export default {
 };
 </script>
 
-
-<!--  Sort function teilweise von folgender website: https://vueshowcase.com/question/sort-titles-in-array-of-objects-with-vuejs -->
 
