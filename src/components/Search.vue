@@ -70,8 +70,6 @@ export default {
       this.loading = true;
     }
   },
-  
-
        methods: {
         topFunction() {
          document.documentElement.scrollTop = 0;
