@@ -1,5 +1,4 @@
 <template>
-    <div onload="setScroll()" onbeforeunload="saveScroll()"></div>
 <div class="lds-dual-ring" v-if="loading"></div>
   <div class="searchField">
     <button id="BottomBtn" @click="bottomFunction()">Death!</button>
