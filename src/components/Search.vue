@@ -3,7 +3,13 @@
   <div class="searchField">
     <button id="BottomBtn" @click="bottomFunction()">Death!</button>
     <input class="inputField" type="text" v-model="search" placeholder="Find Character" />
-
+    <div class = "sort">
+    <select v-model="sortatoz" @change="sortName">
+      <option disabled value="">Sort Character by Name</option>
+      <option value="a-z">a-z</option>
+      <option value="z-a">z-a</option>
+    </select>
+    </div>
     <ul class="List">
     <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id ">
       <router-link :to="{ name: 'Info', params: {userId: user.char_id, name : user.name }}">
@@ -13,7 +19,7 @@
         <h5>"{{user.nickname}}"</h5>        
     </ol>
     </ul>
-    </div>
+  </div>
 
     <button id="TopBtn" @click="topFunction()">Top</button>
 
@@ -30,6 +36,7 @@ export default {
       search: "",
       list: [],
       loading: false,
+      sortatoz: "",
     };
   },
 
@@ -43,7 +50,6 @@ export default {
       return this.list.filter((item) => {
         return Object.values(item).some((word) =>
           String(word).toLowerCase().includes(query)
-                  
         );
       });
     },
@@ -63,17 +69,20 @@ export default {
       this.loading = true;
     }
   },
-    methods: {
-        topFunction() {
-         document.documentElement.scrollTop = 0;
-        },   
-        bottomFunction() {
-         document.documentElement.scrollTop = document.body.scrollHeight;
-        }
-
-        
-                
-  }
-
-}
+  methods: {
+    topFunction() {
+      document.documentElement.scrollTop = 0;
+    },
+    bottomFunction() {
+      document.documentElement.scrollTop = document.body.scrollHeight;
+    },
+    sortName() {
+      if (this.sortatoz === "a-z") {
+        return this.list.sort((a, b) => (a.name > b.name ? 1 : -1));
+      } else {
+        return this.list.sort((a, b) => (a.name > b.name ? -1 : 1));
+      }
+    },
+  },
+};
 </script>
