@@ -1,25 +1,48 @@
 <template>
-
-<div class="lds-dual-ring" v-if="loading"></div>
+  <div class="lds-dual-ring" v-if="loading"></div>
   <div class="searchField">
     <button id="BottomBtn" @click="bottomFunction()">Death!</button>
-    <input class="inputField" type="text" v-model="search" placeholder="Find Character" />
-    
-    <ul class="List">
-    <ol class="characterList" v-for="user in filteredQuery" :key="user.char_id ">
-      <router-link :to="{ name: 'Info', params: {userId: user.char_id, name : user.name }}">
-      <img class="searchimg" :src="user.img" v-bind:img="name" alt="Picture">
-      </router-link>
-      {{user.name}}
-        <h5> Alias "{{user.nickname}}"</h5>        
-    </ol>
-    </ul>
+    <input
+      class="inputField"
+      type="text"
+      v-model="search"
+      placeholder="Find Character"
+    />
+    <div class = "sort">
+    <select v-model="sortatoz" @change="sortName">
+      <option disabled value="">Select</option>
+      <option value="a-z">a-z</option>
+      <option value="z-a">z-a</option>
+    </select>
     </div>
+    <ul class="List">
+      <ol
+        class="characterList"
+        v-for="user in filteredQuery"
+        :key="user.char_id"
+      >
+        <router-link
+          :to="{
+            name: 'Info',
+            params: { userId: user.char_id, name: user.name },
+          }"
+        >
+          <img
+            class="searchimg"
+            :src="user.img"
+            v-bind:img="name"
+            alt="Picture"
+          />
+        </router-link>
+        {{
+          user.name
+        }}
+        <h5>Alias "{{ user.nickname }}"</h5>
+      </ol>
+    </ul>
+  </div>
 
-<button id="TopBtn" @click="topFunction()">Top</button>
-
- 
-  
+  <button id="TopBtn" @click="topFunction()">Top</button>
 </template>
 
 <script>
@@ -31,6 +54,7 @@ export default {
       search: "",
       list: [],
       loading: false,
+      sortatoz: "",
     };
   },
 
@@ -44,7 +68,6 @@ export default {
       return this.list.filter((item) => {
         return Object.values(item).some((word) =>
           String(word).toLowerCase().includes(query)
-                  
         );
       });
     },
@@ -64,15 +87,20 @@ export default {
       this.loading = true;
     }
   },
-    methods: {
-        topFunction() {
-         document.documentElement.scrollTop = 0;
-        },   
-        bottomFunction() {
-         document.documentElement.scrollTop = 10000;
-        }
-                
-  }
-
-}
+  methods: {
+    topFunction() {
+      document.documentElement.scrollTop = 0;
+    },
+    bottomFunction() {
+      document.documentElement.scrollTop = 10000;
+    },
+    sortName() {
+      if (this.sortatoz === "a-z") {
+        return this.list.sort((a, b) => (a.name > b.name ? 1 : -1));
+      } else {
+        return this.list.sort((a, b) => (a.name > b.name ? -1 : 1));
+      }
+    },
+  },
+};
 </script>
