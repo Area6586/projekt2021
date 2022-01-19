@@ -51,7 +51,6 @@ export default {
     props: ['userId'],
     query: ['name'],
    
-
     data (){
         return {
             characters : [],
@@ -63,8 +62,6 @@ export default {
             occupation: [],
             user: null,
         }
-
-    
     },
 
     mounted(){
@@ -81,9 +78,6 @@ export default {
         console.log(err)
       }
     },
-  
-
- 
 }
 </script>
 
